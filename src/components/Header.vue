@@ -6,7 +6,7 @@
       </div>
       <nav>
         <ul class="nav-list">
-          <li><router-link to="/home"> Home </router-link></li>
+          <li><router-link to="/home" style="border-bottom: 2px solid #ccc"> Home </router-link></li>
           <li><router-link to="#"> Quartos </router-link></li>
           <li><router-link to="#"> Contato </router-link></li>
         </ul>

@@ -5,68 +5,125 @@
       <div class="holder">
         <div class="first-card">
           <img class="bg-card" src="../assets/images/div-bg.png" alt="imagem hotel"/>
-          <div class="text-card">
+          <div class="title-card">
             <h1>Aproveite suas<br />Férias conosco!!</h1>
             <img src="../assets/images/sunshine-text.png" alt="logo hotel"/>
           </div>
         </div>
         <div class="second-card">
           <div class="benefits">
-            <div class="first-line">
+            <div class="first-box">
               <div class="aling-center">
-                <div>
-                  <h2>Benefícios</h2>
-                </div>
-                <div>
+                  <h3>Benefícios</h3>
                   <span>Saiba mais</span>
+              </div>
+              <div class="icon-benefits">
+                <div class="icon">
+                  <font-awesome-icon :icon="['fas', 'bath']" />
+                </div>
+                <div class="icon">
+                  <font-awesome-icon :icon="['fas', 'wind']" />
+                </div>
+                <div class="icon">
+                  <font-awesome-icon :icon="['fas', 'wifi']" />
+                </div>
+                <div class="icon">
+                  <font-awesome-icon :icon="['fas', 'dice']" />
                 </div>
               </div>
+            </div>
+            <div class="second-box">
               <div class="aling-center">
                 <h3>Melhores preços</h3>
                 <font-awesome-icon :icon="['fas', 'hotel']" />
               </div>
-            </div>
-            <div class="second-line">
-              <div class="icon">
-                <font-awesome-icon :icon="['fas', 'bath']" />
-              </div>
-              <div class="icon">
-                <font-awesome-icon :icon="['fas', 'wind']" />
-              </div>
-              <div class="icon">
-                <font-awesome-icon :icon="['fas', 'wifi']" />
-              </div>
-              <div class="icon">
-                <font-awesome-icon :icon="['fas', 'dice']" />
-              </div>
-              <div class="box-price">
-                  <font-awesome-icon :icon="['fas', 'check-circle']" />
-                  <span>R$ 2400,00</span>
-              </div>
-              <div class="circle-hotel">
-                <div class="circle">
-                  <img src="../assets/images/circle/first.jpg" alt="imagem hotel">
+              <span class="day">5 dias e 6 noites</span>
+              <div class="box-circle">
+                <div class="box-price">
+                    <font-awesome-icon :icon="['fas', 'check-circle']" />
+                    <span>R$ 2400.00</span>
                 </div>
-                <div class="circle">
-                  <img src="../assets/images/circle/second.jpg" alt="imagem hotel">
-                </div>
-                <div class="circle">
-                  <img src="../assets/images/circle/third.jpg" alt="imagem hotel">
-                </div>
-                <div class="circle">
-                  <img src="../assets/images/circle/fourth.jpg" alt="imagem hotel">
+                <div class="circle-hotel">
+                  <div class="circle">
+                    <img src="../assets/images/circle/first.jpg" alt="imagem hotel">
+                  </div>
+                  <div class="circle">
+                    <img src="../assets/images/circle/second.jpg" alt="imagem hotel">
+                  </div>
+                  <div class="circle">
+                    <img src="../assets/images/circle/third.jpg" alt="imagem hotel">
+                  </div>
+                  <div class="circle">
+                    <img src="../assets/images/circle/fourth.jpg" alt="imagem hotel">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- <div class="best-price">
-            <div class="first-line">
-              
-            </div>
-            <div class="second-line"></div>
-          </div> -->
         </div>
       </div>
+          <div class="choise">
+              <h2 class="title">Escolha uma acomodação</h2>
+              <div class="cards">
+                <div class="bedroom-card">
+                  <img class="bedroom-img" src="../assets/images/teste1.jpg" alt="imagem hotel">
+                  <div class="price-logo">
+                    <div class="price-stars">
+                      <div class="price">
+                        <span>R$ 420.00</span>
+                      </div>
+                      <div class="stars">
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                      </div>
+                    </div>
+                    <div class="logo">
+                      <img src="../assets/images/logo-card.png" alt="imagem logo">
+                    </div>
+                  </div>
+                </div>
+                <div class="bedroom-card">
+                  <img class="bedroom-img" src="../assets/images/teste2.jpg" alt="imagem hotel">
+                  <div class="price-logo">
+                    <div class="price-stars">
+                      <div class="price">
+                        <span>R$ 360.00</span>
+                      </div>
+                      <div class="stars">
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                      </div>
+                    </div>
+                    <div class="logo">
+                      <img src="../assets/images/logo-card.png" alt="imagem logo">
+                    </div>
+                  </div>
+                </div>
+                <div class="bedroom-card">
+                  <img class="bedroom-img" src="../assets/images/teste3.jpg" alt="imagem hotel">
+                  <div class="price-logo">
+                    <div class="price-stars">
+                      <div class="price">
+                        <span>R$ 620.00</span>
+                      </div>
+                      <div class="stars">
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                        <font-awesome-icon :icon="['fas', 'star']" />
+                      </div>
+                    </div>
+                    <div class="logo">
+                      <img src="../assets/images/logo-card.png" alt="imagem logo">
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
     </div>
   </div>
 </template>
@@ -99,15 +156,15 @@ export default {
   height: 35%;
   .first-card {
     position: relative;
-    width: 70%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     .bg-card {
       width: 100%;
       height: 100%;
       border-radius: 45px;
       object-fit: cover;
     }
-    .text-card {
+    .title-card {
       position: absolute;
       top: 0;
       left: 0;
@@ -125,9 +182,9 @@ export default {
     display: flex;
     align-items: center;
     position: absolute;
-    width: 60%;
+    width: 70%;
     height: 45%;
-    bottom: -60px;
+    bottom: -40px;
     background-color: #e0e1e5;
     border-radius: 30px;
     padding: 25px 30px;
@@ -136,21 +193,22 @@ export default {
       width: 100%;
       height: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
     }
-    .first-line {
+    .first-box {
       display: flex;
-      width: 100%;
+      flex-direction: column;
+      height: 100%;
+      width: 50%;
       justify-content: space-between;
       align-items: center;
+      padding-right: 25px;
       .aling-center {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 45%;
-        h2 {
+        height: 30px;
+        width: 100%;
+        h3 {
           font-family: fontBold;
           font-size: 2em;
         }
@@ -159,6 +217,48 @@ export default {
           font-size: 0.95em;
           color: var(--orange1);
         }
+      }
+      .icon-benefits {
+        position: relative;
+        display: flex;
+        height: 50px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        .icon {
+          position: relative;
+          display: flex;
+          height: 50px;
+          width: 60px;
+          border: 1px solid #cccccc;
+          border-radius: 15px;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          background-color: #fff;
+          align-items: center;
+          justify-content: center;
+          svg {
+            font-size: 1.5em;
+            color: var(--secondary);
+          }
+        }
+      }
+    }
+    .second-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 50%;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 25px;
+      .aling-center {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 30px;
+        width: 100%;
+        padding-top: 5px;
         h3 {
           font-size: 1.3em;
         }
@@ -167,89 +267,133 @@ export default {
           color: var(--secondary);
         }
       }
-    }
-    .second-line {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-      .icon {
-        position: relative;
-        display: flex;
-        height: 50px;
-        width: 60px;
-        border: 1px solid #cccccc;
-        border-radius: 15px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        background-color: #fff;
-        align-items: center;
-        justify-content: center;
-        svg {
-          font-size: 1.5em;
-          color: var(--secondary);
-        }
+      .day {
+        margin-right: auto;
+        color: #8C8C8C;
       }
-      .box-price {
-        position: relative;
+      .box-circle {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
-        height: 40px;
-        width: 130px;
-        border: 1px solid #cccccc;
-        border-radius: 15px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        background-color: #fff;
-          text-align: center;
-        svg {
-          font-size: 1.5em;
-          color: var(--secondary);
-          margin-right: 10px;
-        }
-        span {
-          font-family: fontRegular;
-          font-size: 1.1em;
-          height: 17px;
-        }
-      }
-      .circle-hotel {
-        position: relative;
-        display: flex;
-        align-items: center;
+        align-content: center;
         justify-content: space-between;
-        width: 25%;
-        height: 60px;
-        .circle {
+        height: 50px;
+        width: 100%;
+        .box-price {
+          position: relative;
           display: flex;
-          width: 50px;
-          height: 100%;
-          clip-path: circle(40%);
-          img {
-            width: 100%;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
+          width: 125px;
+          border: 1px solid #cccccc;
+          border-radius: 15px;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          background-color: #fff;
+          svg {
+            font-size: 1.5em;
+            color: var(--secondary);
+            margin-right: 10px;
+          }
+          span {
+            font-family: fontRegular;
+            font-size: 1.1em;
+            height: 17px;
+          }
+        }
+        .circle-hotel {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 50%;
+          height: 60px;
+          .circle {
+            display: flex;
+            width: 50px;
             height: 100%;
-            object-fit: cover;
+            clip-path: circle(40%);
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
           }
         }
       }
     }
-    .best-price {
-      position: relative;
-      width: 50%;
-      height: 100%;
+  }
+}
+
+.choise {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 42%;
+  margin-top: 70px;
+  align-items: center;
+  justify-content: space-evenly;
+  .title {
+    font-family: fontBold;
+    color: #fff;
+    font-size: 3em;
+  }
+  .cards {
+    position: relative;
+    display: flex;
+    width: 60%;
+    height: 50%;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    .bedroom-card {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      h3 {
-        font-size: 1.3em;
-        margin-bottom: 5px;
+      width: 240px;
+      height: 200px;
+      background-color: #fff;
+      border-radius: 10px;
+      .bedroom-img {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+        border-radius: 10px 10px 0px 0px;
       }
-      span {
-        font-size: 0.9em;
-        color: #8c8c8c;
-      }
-      svg {
-        font-size: 1.3em;
+      .price-logo {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 40%;
+        padding: 15px;
+        justify-content: space-between;
+        .price-stars {
+          display: flex;
+          height: 100%;
+          width: 50%;
+          flex-direction: column;
+          justify-content: space-between;
+          .price span {
+            font-family: fontBold;
+            font-size: 1.1em;
+            color: var(--secondary);
+          }
+          .stars svg {
+            color: #FFD700;
+            margin-right: 5px;
+          }
+        }
+            .logo {
+              position: relative;
+              display: flex;
+              height: 100%;
+              width: 50%;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
       }
     }
   }
