@@ -16,26 +16,26 @@ import "./assets/css/animate.css";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faChevronLeft,
-  faChevronRight,
   faBath,
   faWind,
   faWifi,
   faDice,
   faSearch,
+  faHotel,
+  faCheckCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 import {} from "@fortawesome/free-brands-svg-icons";
 
 library.add(
-  faChevronLeft,
-  faChevronRight,
   faBath,
   faWind,
   faWifi,
   faDice,
   faSearch,
+  faHotel,
+  faCheckCircle,
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
