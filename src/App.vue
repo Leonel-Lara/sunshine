@@ -40,19 +40,19 @@ div {
 
 @font-face {
   font-family: "fontRegular";
-  src: url("./assets/fonts/Aleo-Regular.ttf");
+  src: url("./assets/fonts/Montserrat-Regular.ttf");
   font-display: swap;
 }
 
 @font-face {
   font-family: "fontLight";
-  src: url("./assets/fonts/Aleo-Light.ttf");
+  src: url("./assets/fonts/Montserrat-Light.ttf");
   font-display: swap;
 }
 
 @font-face {
   font-family: "fontBold";
-  src: url("./assets/fonts/Aleo-Bold.ttf");
+  src: url("./assets/fonts/Montserrat-Bold.ttf");
   font-display: swap;
 }
 
@@ -80,6 +80,5 @@ section {
 .all {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 </style>
