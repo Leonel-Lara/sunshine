@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="container">
+    <div class="holder animated fadeInDown" style="animation-delay:300ms;">
       <div class="logo-wrapper pointer">
         <img src="../assets/images/logo-header.png" alt="Logo image" />
       </div>
@@ -12,7 +12,7 @@
         </ul>
       </nav>
       <div class="user-wrapper">
-          <img src="../assets/images/user.jpg" alt="User image">
+          <img src="../assets/images/user.png" alt="User image">
       </div>
     </div>
   </header>
@@ -25,10 +25,10 @@ export default {};
 <style lang="scss" scoped>
 header {
   position: relative;
-  width: 100%;
-  margin: 20px 0px 50px 0px;
-  padding: 0px 100px 0px 100px;
-  .container {
+  width: 100vw;
+  height: 10%;
+  padding: 8px 56px 8px 56px;
+  .holder {
     position: relative;
     display: flex;
     align-items: center;

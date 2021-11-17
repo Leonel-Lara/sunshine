@@ -35,7 +35,7 @@ a,
 svg,
 div {
   font-size: 13px;
-  color: #000;
+  color: #fff;
 }
 
 @font-face {
@@ -67,12 +67,6 @@ ul {
   list-style: none;
 }
 
-section {
-  position: relative;
-  width: 100vw;
-  padding: 2em 0 90px 0 !important;
-}
-
 .pointer {
   cursor: pointer;
 }
@@ -80,5 +74,16 @@ section {
 .all {
   width: 100vw;
   height: 100vh;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 36px 5em;
 }
 </style>

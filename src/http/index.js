@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const endpoint = "";
+const endpoint = "https://2b9c-170-246-81-44.ngrok.io/";
 
 const http = axios.create({
   baseURL: endpoint,

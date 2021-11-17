@@ -18,7 +18,7 @@
             <div class="input-item">
               <input type="password" placeholder="Senha" />
             </div>
-            <button class="btn">
+            <button @click="submitLogin" class="btn">
               <span>Entrar</span>
             </button>
             <span>Ainda não possui uma conta? <router-link to="#">Cadastre-se</router-link></span>
@@ -78,7 +78,7 @@ export default {
       flex-direction: column;
       align-items: center;
       height: 65%;
-      width: 65%;
+      width: 70%;
       padding: 30px;
       border-radius: 30px;
       background-color: #003C80;

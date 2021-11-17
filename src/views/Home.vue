@@ -1,21 +1,28 @@
 <template>
   <div class="all">
     <Header />
-    <div class="container">
+    <section>
       <div class="holder">
-        <div class="first-card">
-          <img class="bg-card" src="../assets/images/div-bg.png" alt="imagem hotel"/>
+        <div class="first-card animated fadeIn" style="animation-delay: 700ms">
+          <img
+            class="bg-card"
+            src="../assets/images/div-bg.png"
+            alt="imagem hotel"
+          />
           <div class="title-card">
             <h1>Aproveite suas<br />Férias conosco!!</h1>
-            <img src="../assets/images/sunshine-text.png" alt="logo hotel"/>
+            <img src="../assets/images/sunshine-text.png" alt="logo hotel" />
           </div>
         </div>
-        <div class="second-card">
+        <div
+          class="second-card animated flipInX"
+          style="animation-delay: 1000ms"
+        >
           <div class="benefits">
             <div class="first-box">
               <div class="aling-center">
-                  <h3>Benefícios</h3>
-                  <span>Saiba mais</span>
+                <h3>Benefícios</h3>
+                <span>Saiba mais</span>
               </div>
               <div class="icon-benefits">
                 <div class="icon">
@@ -40,21 +47,33 @@
               <span class="day">5 dias e 6 noites</span>
               <div class="box-circle">
                 <div class="box-price">
-                    <font-awesome-icon :icon="['fas', 'check-circle']" />
-                    <span>R$ 2400.00</span>
+                  <font-awesome-icon :icon="['fas', 'check-circle']" />
+                  <span>R$ 2400.00</span>
                 </div>
                 <div class="circle-hotel">
                   <div class="circle">
-                    <img src="../assets/images/circle/first.jpg" alt="imagem hotel">
+                    <img
+                      src="../assets/images/circle/first.jpg"
+                      alt="imagem hotel"
+                    />
                   </div>
                   <div class="circle">
-                    <img src="../assets/images/circle/second.jpg" alt="imagem hotel">
+                    <img
+                      src="../assets/images/circle/second.jpg"
+                      alt="imagem hotel"
+                    />
                   </div>
                   <div class="circle">
-                    <img src="../assets/images/circle/third.jpg" alt="imagem hotel">
+                    <img
+                      src="../assets/images/circle/third.jpg"
+                      alt="imagem hotel"
+                    />
                   </div>
                   <div class="circle">
-                    <img src="../assets/images/circle/fourth.jpg" alt="imagem hotel">
+                    <img
+                      src="../assets/images/circle/fourth.jpg"
+                      alt="imagem hotel"
+                    />
                   </div>
                 </div>
               </div>
@@ -62,69 +81,81 @@
           </div>
         </div>
       </div>
-          <div class="choise">
-              <h2 class="title">Escolha uma acomodação</h2>
-              <div class="cards">
-                <div class="bedroom-card">
-                  <img class="bedroom-img" src="../assets/images/teste1.jpg" alt="imagem hotel">
-                  <div class="price-logo">
-                    <div class="price-stars">
-                      <div class="price">
-                        <span>R$ 420.00</span>
-                      </div>
-                      <div class="stars">
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                      </div>
-                    </div>
-                    <div class="logo">
-                      <img src="../assets/images/logo-card.png" alt="imagem logo">
-                    </div>
-                  </div>
+      <div class="choise">
+        <h2 class="title animated fadeInDown" style="animation-delay: 1300ms">Escolha uma acomodação</h2>
+        <div class="cards">
+          <div class="bedroom-card animated fadeInRight" style="animation-delay: 1600ms">
+            <img
+              class="bedroom-img"
+              src="../assets/images/teste1.jpg"
+              alt="imagem hotel"
+            />
+            <div class="price-logo">
+              <div class="price-stars">
+                <div class="price">
+                  <span>R$ 420.00</span>
                 </div>
-                <div class="bedroom-card">
-                  <img class="bedroom-img" src="../assets/images/teste2.jpg" alt="imagem hotel">
-                  <div class="price-logo">
-                    <div class="price-stars">
-                      <div class="price">
-                        <span>R$ 360.00</span>
-                      </div>
-                      <div class="stars">
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                      </div>
-                    </div>
-                    <div class="logo">
-                      <img src="../assets/images/logo-card.png" alt="imagem logo">
-                    </div>
-                  </div>
-                </div>
-                <div class="bedroom-card">
-                  <img class="bedroom-img" src="../assets/images/teste3.jpg" alt="imagem hotel">
-                  <div class="price-logo">
-                    <div class="price-stars">
-                      <div class="price">
-                        <span>R$ 620.00</span>
-                      </div>
-                      <div class="stars">
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                        <font-awesome-icon :icon="['fas', 'star']" />
-                      </div>
-                    </div>
-                    <div class="logo">
-                      <img src="../assets/images/logo-card.png" alt="imagem logo">
-                    </div>
-                  </div>
+                <div class="stars">
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
                 </div>
               </div>
+              <div class="logo">
+                <img src="../assets/images/logo-card.png" alt="imagem logo" />
+              </div>
+            </div>
           </div>
-    </div>
+          <div class="bedroom-card">
+            <img
+              class="bedroom-img"
+              src="../assets/images/teste2.jpg"
+              alt="imagem hotel"
+            />
+            <div class="price-logo">
+              <div class="price-stars">
+                <div class="price">
+                  <span>R$ 360.00</span>
+                </div>
+                <div class="stars">
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                </div>
+              </div>
+              <div class="logo">
+                <img src="../assets/images/logo-card.png" alt="imagem logo" />
+              </div>
+            </div>
+          </div>
+          <div class="bedroom-card">
+            <img
+              class="bedroom-img"
+              src="../assets/images/teste3.jpg"
+              alt="imagem hotel"
+            />
+            <div class="price-logo">
+              <div class="price-stars">
+                <div class="price">
+                  <span>R$ 620.00</span>
+                </div>
+                <div class="stars">
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                </div>
+              </div>
+              <div class="logo">
+                <img src="../assets/images/logo-card.png" alt="imagem logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -138,16 +169,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px 130px 0px 130px;
-}
-
 .holder {
   position: relative;
   display: flex;
@@ -157,7 +178,7 @@ export default {
   .first-card {
     position: relative;
     width: 80%;
-    height: 80%;
+    height: 90%;
     .bg-card {
       width: 100%;
       height: 100%;
@@ -168,8 +189,8 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      margin-top: 50px;
-      margin-left: 60px;
+      padding-top: 24px;
+      padding-left: 64px;
       h1 {
         font-family: fontBold;
         font-size: 3em;
@@ -182,9 +203,9 @@ export default {
     display: flex;
     align-items: center;
     position: absolute;
-    width: 70%;
+    width: 73%;
     height: 45%;
-    bottom: -40px;
+    bottom: -55px;
     background-color: #e0e1e5;
     border-radius: 30px;
     padding: 25px 30px;
@@ -225,6 +246,7 @@ export default {
         width: 100%;
         align-items: center;
         justify-content: space-between;
+        margin-top: 7px;
         .icon {
           position: relative;
           display: flex;
@@ -269,7 +291,7 @@ export default {
       }
       .day {
         margin-right: auto;
-        color: #8C8C8C;
+        color: #8c8c8c;
       }
       .box-circle {
         display: flex;
@@ -330,14 +352,15 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 42%;
-  margin-top: 70px;
+  height: 50%;
+  margin-top: 90px;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   .title {
     font-family: fontBold;
     color: #fff;
     font-size: 3em;
+    margin-top: 36px;
   }
   .cards {
     position: relative;
@@ -379,21 +402,21 @@ export default {
             color: var(--secondary);
           }
           .stars svg {
-            color: #FFD700;
+            color: #ffd700;
             margin-right: 5px;
           }
         }
-            .logo {
-              position: relative;
-              display: flex;
-              height: 100%;
-              width: 50%;
-              img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-              }
-            }
+        .logo {
+          position: relative;
+          display: flex;
+          height: 100%;
+          width: 50%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
       }
     }
   }
