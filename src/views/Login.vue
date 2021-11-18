@@ -2,12 +2,18 @@
   <div class="all">
     <div class="container">
       <div class="holder">
-        <div class="card-holder animated fadeInDownBig" style="animation-delay:300ms;">
+        <div
+          class="card-holder animated fadeInDownBig"
+          style="animation-delay: 300ms"
+        >
           <img src="../assets/images/travel.svg" alt="" />
         </div>
-        <div class="card-holder animated fadeInUpBig" style="animation-delay:500ms;">
+        <div
+          class="card-holder animated fadeInUpBig"
+          style="animation-delay: 500ms"
+        >
           <div class="card-login">
-            <div class="logo animated zoomIn" style="animation-delay:1300ms;">
+            <div class="logo animated zoomIn" style="animation-delay: 1300ms">
               <img src="../assets/images/sunshine.png" alt="" />
             </div>
             <h2>Bem-vindo(a)</h2>
@@ -19,9 +25,13 @@
               <input type="password" placeholder="Senha" />
             </div>
             <button @click="submitLogin" class="btn">
-              <span>Entrar</span>
+              <span v-show="!loading">Entrar</span>
+              <div v-show="loading" class="loading2"></div>
             </button>
-            <span>Ainda não possui uma conta? <router-link to="#">Cadastre-se</router-link></span>
+            <span
+              >Ainda não possui uma conta?
+              <router-link to="/cadastro">Cadastre-se</router-link></span
+            >
           </div>
         </div>
       </div>
@@ -29,16 +39,33 @@
   </div>
 </template>
 <script>
+import http from "@/http";
 export default {
   data() {
     return {
+      user: {
+        email: "",
+        password: "",
+      },
       loading: false,
     };
   },
   methods: {
-    submitLogin() {
-      // http get
-      this.$router.push("/home");
+    async submitLogin() {
+      this.loading = true;
+
+      try {
+        const response = await http.post("user/login", this.user);
+        if (response.status === 200) {
+          localStorage.user = JSON.stringify(response.data);
+          console.log(localStorage.user);
+          this.$router.push("/home");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+
+      this.loading = false;
     },
   },
 };
@@ -81,7 +108,7 @@ export default {
       width: 70%;
       padding: 30px;
       border-radius: 30px;
-      background-color: #003C80;
+      background-color: #003c80;
       .logo {
         position: absolute;
         top: -8rem;
