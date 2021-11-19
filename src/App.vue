@@ -87,6 +87,13 @@ section {
   padding: 36px 5em;
 }
 
+.center {
+  display: flex;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
 .loading2 {
   animation-duration: 0.75s;
   animation-iteration-count: infinite;

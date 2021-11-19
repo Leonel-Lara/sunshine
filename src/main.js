@@ -12,6 +12,9 @@ const options = {
 };
 Vue.use(VueSweetalert2, options);
 
+import VueTheMask from "vue-the-mask";
+Vue.use(VueTheMask);
+
 import "./assets/css/animate.css";
 
 import { library } from "@fortawesome/fontawesome-svg-core";

@@ -2,8 +2,8 @@
   <div class="all">
     <Header />
     <section>
-      <div class="holder">
-        <div class="first-card animated fadeIn" style="animation-delay: 700ms">
+      <div class="holder animated fadeInDown" style="animation-delay: 700ms">
+        <div class="first-card">
           <img
             class="bg-card"
             src="../assets/images/div-bg.png"
@@ -14,10 +14,7 @@
             <img src="../assets/images/sunshine-text.png" alt="logo hotel" />
           </div>
         </div>
-        <div
-          class="second-card animated flipInX"
-          style="animation-delay: 1000ms"
-        >
+        <div class="second-card">
           <div class="benefits">
             <div class="first-box">
               <div class="aling-center">
@@ -81,10 +78,10 @@
           </div>
         </div>
       </div>
-      <div class="choise">
-        <h2 class="title animated fadeInDown" style="animation-delay: 1300ms">Escolha uma acomodação</h2>
+      <div class="choise animated fadeInDown" style="animation-delay: 1000ms">
+        <h2 class="title">Escolha uma acomodação</h2>
         <div class="cards">
-          <div class="bedroom-card animated fadeInRight" style="animation-delay: 1600ms">
+          <div class="bedroom-card">
             <img
               class="bedroom-img"
               src="../assets/images/teste1.jpg"
@@ -232,6 +229,7 @@ export default {
         h3 {
           font-family: fontBold;
           font-size: 2em;
+          color: #000;
         }
         span {
           font-family: fontBold;
@@ -283,6 +281,7 @@ export default {
         padding-top: 5px;
         h3 {
           font-size: 1.3em;
+          color: #000;
         }
         svg {
           font-size: 1.5em;
@@ -315,12 +314,12 @@ export default {
           svg {
             font-size: 1.5em;
             color: var(--secondary);
-            margin-right: 10px;
+            margin-right: 5px;
           }
           span {
             font-family: fontRegular;
             font-size: 1.1em;
-            height: 17px;
+            color: #000;
           }
         }
         .circle-hotel {

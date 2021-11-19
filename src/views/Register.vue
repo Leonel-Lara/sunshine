@@ -7,7 +7,12 @@
           <h1>Meu perfil</h1>
           <div class="input-item">
             <input v-model="user.name" type="text" placeholder="Nome" />
-            <input v-model="user.document" type="text" placeholder="CPF" />
+            <the-mask
+              v-model="user.document"
+              type="text"
+              :mask="['###.###.###-##']"
+              placeholder="CPF"
+            />
           </div>
           <div class="input-item">
             <input v-model="user.email" type="email" placeholder="Email" />
@@ -28,12 +33,8 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
 import http from "@/http";
 export default {
-  components: {
-    Header,
-  },
   data() {
     return {
       user: {
@@ -50,18 +51,20 @@ export default {
       this.loading = true;
 
       try {
-        const response = await http.post("users/insert", this.user);
+        const response = await http.post("user/insert", this.user);
         if (response.status === 200) {
-          this.$swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Cadastro realizado!!",
-            text: "Você será redirecionado para o Login",
-            showConfirmButton: true,
-          }).then(() => {
-            this.$router.push("/");
-          });
-        };
+          this.$swal
+            .fire({
+              position: "center",
+              icon: "success",
+              title: "Cadastro realizado!!",
+              text: "Você será redirecionado para o Login",
+              showConfirmButton: true,
+            })
+            .then(() => {
+              this.$router.push("/");
+            });
+        }
       } catch (error) {
         console.log(error);
       }

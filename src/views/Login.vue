@@ -19,10 +19,14 @@
             <h2>Bem-vindo(a)</h2>
             <h1>Entre na sua conta</h1>
             <div class="input-item">
-              <input type="email" placeholder="E-mail" />
+              <input v-model="user.email" type="email" placeholder="E-mail" />
             </div>
             <div class="input-item">
-              <input type="password" placeholder="Senha" />
+              <input
+                v-model="user.password"
+                type="password"
+                placeholder="Senha"
+              />
             </div>
             <button @click="submitLogin" class="btn">
               <span v-show="!loading">Entrar</span>
@@ -58,7 +62,6 @@ export default {
         const response = await http.post("user/login", this.user);
         if (response.status === 200) {
           localStorage.user = JSON.stringify(response.data);
-          console.log(localStorage.user);
           this.$router.push("/home");
         }
       } catch (error) {

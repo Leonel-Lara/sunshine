@@ -84,7 +84,7 @@ header {
       position: relative;
       padding: 16px 30px;
       border-radius: 20px;
-      background-color: #E03232;
+      background-color: #e03232;
       cursor: pointer;
       display: flex;
       justify-content: center;

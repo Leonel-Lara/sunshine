@@ -1,27 +1,27 @@
 <template>
   <div class="all">
     <Header :logout="true" />
-    <section>
+    <div v-show="loading" class="center mt-3">
+      <div class="loading2"></div>
+    </div>
+    <section v-show="!loading">
       <div class="card-profile animated zoomIn" style="animation-delay: 500ms">
         <img src="../assets/images/user.png" />
         <div class="profile">
           <h1>Meu perfil</h1>
           <div class="input-item">
             <input v-model="user.name" type="text" placeholder="Nome" />
-            <input v-model="user.document" type="text" placeholder="CPF" />
           </div>
           <div class="input-item">
             <input v-model="user.email" type="email" placeholder="Email" />
-            <input
-              v-model="user.password"
-              type="password"
-              placeholder="Senha"
-            />
+          </div>
+          <div class="input-item">
+            <input v-model="user.password" type="password" placeholder="Senha" />
           </div>
         </div>
         <button @click="updateUser" class="btn">
-          <span v-show="!loading">Atualizar</span>
-          <div v-show="loading" class="loading2"></div>
+          <span v-show="!updating">Atualizar</span>
+          <div v-show="updating" class="loading2"></div>
         </button>
       </div>
       <div class="cards">
@@ -101,24 +101,34 @@ export default {
         email: "",
         password: "",
       },
-      loading: false,
+      userStorage: "",
+      getUser: [],
+      loading: true,
+      updating: false,
       creditPayment: true,
       debitPayment: true,
     };
   },
+  async created() {
+    this.userStorage = JSON.parse(localStorage.user);
+
+    try {
+      const response = await http.get(`user/list?id=${this.userStorage.id}`);
+      if (response.status === 200) {
+        this.getUser = response.data;
+        this.user = this.getUser[0];
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    this.loading = false;
+  },
   methods: {
-    async getUser() {
-        try {
-            const response = await http.get()
-        } catch (error) {
-            console.log(error);
-        }
-    },
     async updateUser() {
-      this.loading = true;
+      this.updating = true;
 
       try {
-        const response = await http.put("users/update?id=0", this.user);
+        const response = await http.put(`user/update?id=${this.userStorage.id}`, this.user);
         if (response.status === 200) {
           this.user = response.data;
           this.$swal.fire({
@@ -133,7 +143,8 @@ export default {
         console.log(error);
       }
 
-      this.loading = false;
+      this.created();
+      this.updating = false;
     },
   },
 };
@@ -150,6 +161,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   height: 80%;
   width: 35%;
   background-color: var(--secondary);
@@ -164,10 +176,10 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     height: 50%;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-end;
     h1 {
       font-family: fontBold;
       font-size: 2em;
