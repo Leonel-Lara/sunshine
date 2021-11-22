@@ -4,6 +4,7 @@ import Login from "@/views/Login";
 import Register from "@/views/Register";
 import Home from "@/views/Home";
 import Profile from "@/views/Profile";
+import Bedroom from "@/views/Bedroom";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/perfil",
     name: "Profile",
     component: Profile,
+  },
+  {
+    path: "/quartos",
+    name: "Bedroom",
+    component: Bedroom,
   },
 ];
 

@@ -27,6 +27,7 @@ import {
   faHotel,
   faCheckCircle,
   faStar,
+  faMugHot,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -40,7 +41,8 @@ library.add(
   faSearch,
   faHotel,
   faCheckCircle,
-  faStar
+  faStar,
+  faMugHot,
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
