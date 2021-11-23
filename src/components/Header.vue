@@ -11,7 +11,7 @@
               Home
             </router-link>
           </li>
-          <li><router-link to="#"> Quartos </router-link></li>
+          <li><router-link to="/quartos"> Quartos </router-link></li>
           <li><router-link to="#"> Contato </router-link></li>
         </ul>
       </nav>

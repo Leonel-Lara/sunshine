@@ -4,7 +4,7 @@ import Login from "@/views/Login";
 import Register from "@/views/Register";
 import Home from "@/views/Home";
 import Profile from "@/views/Profile";
-import Bedroom from "@/views/Bedroom";
+import ListBedroom from "@/views/ListBedroom";
 
 Vue.use(VueRouter);
 
@@ -31,8 +31,8 @@ const routes = [
   },
   {
     path: "/quartos",
-    name: "Bedroom",
-    component: Bedroom,
+    name: "ListBedroom",
+    component: ListBedroom,
   },
 ];
 
