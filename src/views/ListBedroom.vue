@@ -2,34 +2,50 @@
   <div class="all">
     <Header />
     <section>
-      <infoReserve v-show="requestInfos" @submitFilter="getBedrooms" />
+      <FilterBedroom
+        v-show="requestInfos && !reserveApprove"
+        @submitFilter="getBedrooms"
+      />
+      <Reserve
+        v-show="reserveApprove && !requestInfos"
+        :reserveDescript="userReserve"
+      />
       <div
-        v-show="!requestInfos"
-        class="card-bedroom"
-        v-for="bedroom in listBedroom"
-        :key="bedroom.id"
+        class="btn-back"
+        v-show="!requestInfos && !reserveApprove"
+        @click="requestInfos = true"
       >
-        <img src="../assets/images/quartos.jpg" alt="quartos" />
-        <div class="holder">
-          <div class="title">
-            <span>{{ bedroom.name }}</span>
-            <div v-for="(star, index) in bedroom.quality" :key="index">
-              <font-awesome-icon :icon="['fas', 'star']" />
+        <span>Voltar ao filtro</span>
+      </div>
+      <div class="cards-holder">
+        <div
+          v-show="!requestInfos && !reserveApprove"
+          class="card-bedroom"
+          v-for="bedroom in listBedroom"
+          :key="bedroom.id"
+        >
+          <img src="../assets/images/quartos.jpg" alt="quartos" />
+          <div class="holder">
+            <div class="title">
+              <span>{{ bedroom.name }}</span>
+              <div v-for="(star, index) in bedroom.quality" :key="index">
+                <font-awesome-icon :icon="['fas', 'star']" />
+              </div>
             </div>
+            <div class="icons">
+              <font-awesome-icon :icon="['fas', 'wifi']" />
+              <font-awesome-icon :icon="['fas', 'mug-hot']" />
+              <font-awesome-icon :icon="['fas', 'bath']" />
+            </div>
+            <div class="description">
+              <span>
+                {{ bedroom.description }}
+              </span>
+            </div>
+            <button @click="reserve(bedroom)" class="btn">
+              <span>Reservar</span>
+            </button>
           </div>
-          <div class="icons">
-            <font-awesome-icon :icon="['fas', 'wifi']" />
-            <font-awesome-icon :icon="['fas', 'mug-hot']" />
-            <font-awesome-icon :icon="['fas', 'bath']" />
-          </div>
-          <div class="description">
-            <span>
-              {{ bedroom.description }}
-            </span>
-          </div>
-          <button class="btn">
-            <span>Saiba mais</span>
-          </button>
         </div>
       </div>
     </section>
@@ -39,29 +55,69 @@
 <script>
 import http from "@/http";
 import Header from "@/components/Header";
-import infoReserve from "@/components/infoReserve";
+import FilterBedroom from "@/components/FilterBedroom";
+import Reserve from "@/components/Reserve";
 export default {
   components: {
     Header,
-    infoReserve,
+    FilterBedroom,
+    Reserve,
   },
   data() {
     return {
-      requestInfos: true,
+      userReserve: {
+        id_user: "",
+        id_bedroom: "",
+        start_date: "",
+        end_date: "",
+        room_number: "",
+      },
+      requestInfos: false,
+      reserveApprove: false,
       listBedroom: [],
       filterBedroom: {},
+      userStorage: {},
     };
+  },
+  created() {
+    this.userStorage = JSON.parse(localStorage.user);
   },
   methods: {
     async getBedrooms(value) {
       this.filterBedroom = value;
-      console.log(typeof this.filterBedroom.quality);
-
       try {
-        const response = await http.get(`bedroom/list?quality=${this.filterBedroom.quality}&value=${this.filterBedroom.price}`);
+        const response = await http.get(
+          `booking/list?start_date=${this.filterBedroom.startDate}&end_date=${this.filterBedroom.endDate}`
+        );
         if (response.status === 200) {
           this.listBedroom = response?.data;
           this.requestInfos = false;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async reserve(value) {
+      this.userReserve.id_user = this.userStorage.id;
+      this.userReserve.id_bedroom = value.id;
+      this.userReserve.start_date = this.filterBedroom.startDate;
+      this.userReserve.end_date = this.filterBedroom.endDate;
+
+      try {
+        const response = await http.post("booking/insert", this.userReserve);
+        if (response.status === 200) {
+          this.userReserve = response?.data;
+          this.$swal
+            .fire({
+              position: "center",
+              icon: "success",
+              title: "Reserva realizada!!",
+              text: "Você será redirecionado para os detalhes",
+              showConfirmButton: true,
+            })
+            .then(() => {
+              this.reserveApprove = true;
+            });
         }
       } catch (error) {
         console.log(error);
@@ -73,15 +129,25 @@ export default {
 
 <style lang="scss" scoped>
 section {
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+.cards-holder {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding: 0 5em 0 5em;
 }
 .card-bedroom {
   position: relative;
   display: flex;
-  width: 80%;
-  height: 200px;
+  width: 45%;
+  height: 180px;
   background-color: #fff;
   border-radius: 20px;
+  margin-bottom: 60px;
   img {
     position: relative;
     width: 400px;
@@ -131,27 +197,45 @@ section {
         color: #000;
       }
     }
-
-    .btn {
-      width: 100px;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      padding: 10px 12px;
-      border-radius: 15px;
-      background-color: var(--primary);
-      margin: 0px 1.5em 1.5em auto;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
-      span {
-        font-family: fontBold;
-        font-size: 1em;
-        color: #fff;
-      }
+  }
+  .btn {
+    width: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 12px;
+    border-radius: 15px;
+    background-color: var(--primary);
+    margin: 0px 1.5em 1.5em auto;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+    span {
+      font-family: fontBold;
+      font-size: 1em;
+      color: #fff;
     }
+  }
+}
+
+.btn-back {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto !important;
+  width: 170px;
+  height: 50px;
+  padding: 10px 5px;
+  margin: 0px;
+  background-color: var(--secondary);
+  border-radius: 15px;
+  span {
+    font-family: fontBold;
+    font-size: 1.3em;
+    color: #fff;
   }
 }
 </style>

@@ -77,7 +77,7 @@ export default {
         if (response.status === 200) {
           this.$swal
             .fire({
-              position: "center",
+              position: "top-center",
               icon: "success",
               title: "Cadastro realizado!!",
               text: "Você será redirecionado para o Login",

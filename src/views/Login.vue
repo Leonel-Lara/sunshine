@@ -26,6 +26,7 @@
                 v-model="user.password"
                 type="password"
                 placeholder="Senha"
+                @keypress.enter="submitLogin"
               />
             </div>
             <button @click="submitLogin" class="btn">

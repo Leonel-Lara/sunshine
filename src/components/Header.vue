@@ -18,7 +18,7 @@
       <router-link v-show="!logout" to="/perfil" class="user-wrapper">
         <img src="../assets/images/user.png" alt="User image" />
       </router-link>
-      <div v-show="logout" class="btn">
+      <div v-show="logout" @click="$router.push('/')" class="btn">
         <span>Desconectar</span>
       </div>
     </div>
